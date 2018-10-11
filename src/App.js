@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import {Route} from "react-router-dom";
 import Nav from './components/nav/nav';
+import TestTakers from './routes/testTakers';
 import './App.css';
 
 class App extends Component {
@@ -7,6 +9,7 @@ class App extends Component {
     return (
       <React.Fragment>
       <Nav />
+      <Route exact path='/' component={TestTakers} />
       </React.Fragment>
     );
   }
