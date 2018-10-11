@@ -1,3 +1,63 @@
-.test-takers .left-bar, .test-takers .takers-list {
-   padding: 20px 20px 0;
+.test-takers .left-bar {
+   padding: 20px;
+   margin-top: 100px;
+}
+
+.test-takers .takers-list {   padding: 20px;
+}
+
+.error-data {
+   display: inline-block;
+   width: 100%;
+   min-height: 100vh;
+   min-height: calc(100vh - 450px);
+}
+
+@media screen and (min-width:750px) {
+   .test-takers .left-bar {
+      margin-top: 100px;
+      padding-top: 40px;
+      width: 100%;
+      box-sizing: border-box;
+      position: fixed;
+      top: 0;
+      background: #fff;
+      z-index: 50;
+   }
+   .test-takers .left-bar form {
+      display: flex;
+      justify-content: space-between;
+      overflow: visible;
+   }
+   .test-takers .takers-list {
+      margin-top: 350px;
+   }
+   .test-takers .left-bar form>* {
+      margin-right: 30px;
+   }
+   .test-takers .left-bar form .form-button {
+      margin-right: 0;
+      margin-bottom: 15px;
+   }
+}
+
+@media screen and (min-width:1025px) {
+   .test-takers .left-bar {
+      display: inline-block;
+      width: 350px;
+      min-height: 100vh;
+      min-height: calc(100vh - 450px);
+   }
+   .test-takers .takers-list {
+      display: inline-block;
+      margin-left: 350px;
+      margin-top: 100px;
+      padding-top: 40px;
+      min-height: 100vh;
+      min-height: calc(100vh - 450px);
+   }
+   .test-takers .left-bar form {
+      display: inline-block;
+      overflow: hidden;
+   }
 }

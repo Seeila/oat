@@ -3,6 +3,7 @@ import MainTitle from "../components/titles/mainTitles";
 import SecondaryTitle from "../components/titles/secondaryTitle";
 import Form from "../components/forms/nameFirstnameForm";
 import NameElement from "../components/lists/nameElement";
+import Background from "../assets/img/diagonal-noise.png";
 import * as takersAPI from "../assets//data/takersAPI";
 
 class TestTakers extends Component {
@@ -29,11 +30,11 @@ class TestTakers extends Component {
                <p>Search in the list:</p>
                <Form />
             </section>
-            <section className="takers-list">
+            <section className="takers-list" style={{backgroundImage: `url(${Background})`}}>
                <SecondaryTitle titleText="Takers list" />
                <ul>
                   {!this.state.shownTakers.length ? (
-                     <p>Sorry couldn't load the data please try again</p>
+                     <p className="error-data">Sorry couldn't load the data please try again</p>
                   ) : (
                      this.state.shownTakers.map(taker => (
                         <NameElement
