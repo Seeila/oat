@@ -5,8 +5,7 @@ import Logo from "../../assets/img/OAT_logo.svg";
 const Nav = () => (
    <nav role="navigation" className="main-nav">
       <Link to="/">
-         {" "}
-         <img src={Logo} alt="OAT Home of TAO" className="oat-logo" />{" "}
+         <img src={Logo} alt="OAT Home of TAO" className="oat-logo" />
       </Link>{" "}
    </nav>
 );

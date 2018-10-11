@@ -1,0 +1,9 @@
+label {
+   width: 100%;
+   display: inline-block;
+   font-size: 0.9em;
+   margin-bottom: 10px;
+}
+
+@import "./inputs/textInput.css";
+@import "./inputs/button.css";

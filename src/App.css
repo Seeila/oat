@@ -1,27 +1,24 @@
 @import "./normalize.css";
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600');
-
 body {
    font-family: 'Open Sans', sans-serif;
 }
 
-
-
 ul {
-   margin:0;
-   padding:0;
+   margin: 0;
+   padding: 0;
 }
 
 li {
-   list-style:none;
+   list-style: none;
 }
 
 a {
-   text-decoration:none;
-   color:inherit;
+   text-decoration: none;
+   color: inherit;
 }
-
 
 @import "./components/nav/nav.css";
 @import "./routes/testTakers.css";
 @import "./components/titles/mainTitles.css";
+@import "./components/forms/forms.css";

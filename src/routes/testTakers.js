@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
-import MainTitle from '../components/titles/mainTitles';
-
+import React, { Component } from "react";
+import MainTitle from "../components/titles/mainTitles";
+import Form from "../components/forms/nameFirstnameForm";
 
 class TestTakers extends Component {
    render() {
@@ -9,9 +9,9 @@ class TestTakers extends Component {
             <section className="left-bar">
                <MainTitle titleText="Test Takers" />
                <p>Search in the list:</p>
+               <Form />
             </section>
-            <section className="takers-list">
-            </section>
+            <section className="takers-list" />
          </main>
       );
    }

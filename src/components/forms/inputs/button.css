@@ -1,0 +1,26 @@
+.form-button {
+   width: 44%;
+   min-width: 100px;
+   max-width: 250px;
+   margin-top: 20px;
+   box-sizing: border-box;
+   padding: 15px;
+   color: #fff;
+   text-transform: uppercase;
+   text-align: center;
+   background: #0079C1;
+   border: 2px solid #0079C1;
+   border-radius: 10px;
+   transition: 1s;
+}
+
+.form-button:nth-of-type(2) {
+   float: right;
+   margin-left: 30px;
+}
+
+.form-button:hover {
+   background: transparent;
+   color: #0079C1;
+   transform: scale(1.1);
+}
