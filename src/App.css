@@ -23,3 +23,4 @@ a {
 @import "./components/titles/mainTitles.css";
 @import "./components/titles/secondaryTitle.css";
 @import "./components/forms/forms.css";
+@import "./components/lists/nameElement.css";

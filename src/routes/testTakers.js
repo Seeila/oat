@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import MainTitle from "../components/titles/mainTitles";
 import SecondaryTitle from "../components/titles/secondaryTitle";
 import Form from "../components/forms/nameFirstnameForm";
+import NameElement from "../components/lists/nameElement";
 import * as takersAPI from "../assets//data/takersAPI";
 
 class TestTakers extends Component {
@@ -16,6 +17,7 @@ class TestTakers extends Component {
    componentDidMount() {
       takersAPI.getAll().then(res => {
          this.setState({ testTakers: res });
+         this.setState({ shownTakers: res });
       });
    }
 
@@ -28,7 +30,20 @@ class TestTakers extends Component {
                <Form />
             </section>
             <section className="takers-list">
-               <SecondaryTitle titleText="Takers list"/>
+               <SecondaryTitle titleText="Takers list" />
+               <ul>
+                  {!this.state.shownTakers.length ? (
+                     <p>Sorry couldn't load the data please try again</p>
+                  ) : (
+                     this.state.shownTakers.map(taker => (
+                        <NameElement
+                           name={taker.lastName}
+                           firstname={taker.firstName}
+                           key={taker.userId}
+                        />
+                     ))
+                  )}
+               </ul>
             </section>
          </main>
       );
