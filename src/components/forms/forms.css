@@ -1,3 +1,7 @@
+form {
+   overflow: hidden;
+}
+
 label {
    width: 100%;
    display: inline-block;

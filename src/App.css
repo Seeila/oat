@@ -21,4 +21,5 @@ a {
 @import "./components/nav/nav.css";
 @import "./routes/testTakers.css";
 @import "./components/titles/mainTitles.css";
+@import "./components/titles/secondaryTitle.css";
 @import "./components/forms/forms.css";
