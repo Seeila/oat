@@ -1,16 +1,18 @@
 .test-takers .left-bar {
    padding: 20px;
-   margin-top: 100px;
+   background: #fff;
+   margin-top: 90px;
 }
 
-.test-takers .takers-list {   padding: 20px;
+.test-takers .takers-list {
+   padding: 20px;
 }
 
 .error-data {
    display: inline-block;
-   width: 100%;
-   min-height: 100vh;
-   min-height: calc(100vh - 450px);
+   background: #D21243;
+   padding: 15px;
+   color: #fff;
 }
 
 @media screen and (min-width:750px) {
@@ -21,7 +23,6 @@
       box-sizing: border-box;
       position: fixed;
       top: 0;
-      background: #fff;
       z-index: 50;
    }
    .test-takers .left-bar form {
@@ -45,6 +46,7 @@
    .test-takers .left-bar {
       display: inline-block;
       width: 350px;
+      height: 100%;
       min-height: 100vh;
       min-height: calc(100vh - 450px);
    }
@@ -53,6 +55,8 @@
       margin-left: 350px;
       margin-top: 100px;
       padding-top: 40px;
+      width: calc(100vw - 350px);
+      box-sizing: border-box;
       min-height: 100vh;
       min-height: calc(100vh - 450px);
    }

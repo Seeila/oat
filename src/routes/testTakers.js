@@ -3,7 +3,6 @@ import MainTitle from "../components/titles/mainTitles";
 import SecondaryTitle from "../components/titles/secondaryTitle";
 import Form from "../components/forms/nameFirstnameForm";
 import NameElement from "../components/lists/nameElement";
-import Background from "../assets/img/diagonal-noise.png";
 import * as takersAPI from "../assets//data/takersAPI";
 
 class TestTakers extends Component {
@@ -22,19 +21,40 @@ class TestTakers extends Component {
       });
    }
 
+   handleSubmit = event => {
+      event.preventDefault();
+      const name = event.target.Name.value.toLowerCase();
+      const firstName = event.target.Firstname.value.toLowerCase();
+      this.filterList(name, firstName);
+   };
+
+   filterList = (name, firstname) => {
+      const queryName = new RegExp(name);
+      const queryFirstname = new RegExp(firstname);
+      const filteredTakers = this.state.testTakers.filter(
+         taker =>
+            queryName.test(taker.lastName) &&
+            queryFirstname.test(taker.firstName)
+      );
+
+      this.setState({ shownTakers: filteredTakers });
+   };
+
    render() {
       return (
          <main role="main" className="test-takers">
             <section className="left-bar">
                <MainTitle titleText="Test Takers" />
                <p>Search in the list:</p>
-               <Form />
+               <Form handleSubmit={this.handleSubmit} />
             </section>
-            <section className="takers-list" style={{backgroundImage: `url(${Background})`}}>
+            <section className="takers-list">
                <SecondaryTitle titleText="Takers list" />
                <ul>
                   {!this.state.shownTakers.length ? (
-                     <p className="error-data">Sorry couldn't load the data please try again</p>
+                     <p className="error-data">
+                        Sorry we could'nt find any results please try again
+                     </p>
                   ) : (
                      this.state.shownTakers.map(taker => (
                         <NameElement

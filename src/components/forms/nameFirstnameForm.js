@@ -5,7 +5,7 @@ import SubmitButton from "./inputs/button";
 class TestTakers extends Component {
    render() {
       return (
-         <form>
+         <form onSubmit={this.props.handleSubmit}>
             <TextInput
                label="Name"
                inputPlaceholder="Ex: Fostert"

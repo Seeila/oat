@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600');
 body {
    font-family: 'Open Sans', sans-serif;
+   background: url('./assets/img/diagonal-noise.png');
 }
 
 ul {
