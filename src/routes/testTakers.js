@@ -24,7 +24,7 @@ class TestTakers extends Component {
 
    render() {
       return (
-         <main className="test-takers">
+         <main role="main" className="test-takers">
             <section className="left-bar">
                <MainTitle titleText="Test Takers" />
                <p>Search in the list:</p>
