@@ -1,6 +1,6 @@
 .form-button {
-   float:right;
-   width: 50%;
+   float: right;
+   width: 45%;
    min-width: 100px;
    max-width: 250px;
    margin-top: 20px;
@@ -15,8 +15,19 @@
    transition: 1s;
 }
 
+.form-button[type=reset] {
+   background: transparent;
+   color: #0079C1;
+   margin-right: 30px;
+   float: left;
+}
+
 .form-button:hover {
    background: transparent;
    color: #0079C1;
-   transform: scale(1.1);
+}
+
+.form-button[type=reset]:hover {
+   background: #0079C1;
+   color: #fff;
 }

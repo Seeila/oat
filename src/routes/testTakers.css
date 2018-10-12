@@ -2,7 +2,7 @@
    padding: 20px;
    background: #fff;
    margin-top: 90px;
-   overflow: hidden;
+   overflow: visible;
 }
 
 .test-takers .takers-list {
@@ -35,8 +35,10 @@
       margin-right: 30px;
    }
    .test-takers .left-bar form .form-button {
-      margin-right: 0;
       margin-bottom: 15px;
+   }
+   .test-takers .left-bar form .form-button[type=submit] {
+      margin-right: 0;
    }
 }
 

@@ -5,7 +5,10 @@ import SubmitButton from "./inputs/button";
 class TestTakers extends Component {
    render() {
       return (
-         <form onSubmit={this.props.handleSubmit}>
+         <form
+            onSubmit={this.props.handleSubmit}
+            onReset={this.props.handleReset}
+         >
             <TextInput
                label="Name"
                inputPlaceholder="Ex: Fostert"
@@ -16,6 +19,7 @@ class TestTakers extends Component {
                inputPlaceholder="Ex: Abigail"
                inputName="Firstname"
             />
+            <SubmitButton buttonType="reset" buttonText="Reset" />
             <SubmitButton buttonType="submit" buttonText="Search" />
          </form>
       );

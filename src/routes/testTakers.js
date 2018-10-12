@@ -30,6 +30,11 @@ class TestTakers extends Component {
       this.filterList(name, firstName);
    };
 
+   handleReset = event => {
+      const allUsers = [...this.state.testTakers];
+      this.setState({ shownTakers: allUsers });
+   };
+
    filterList = (name, firstname) => {
       const queryName = new RegExp(name);
       const queryFirstname = new RegExp(firstname);
@@ -52,7 +57,10 @@ class TestTakers extends Component {
                   <section className="left-bar">
                      <MainTitle titleText="Test Takers" />
                      <p>Search in the list:</p>
-                     <Form handleSubmit={this.handleSubmit} />
+                     <Form
+                        handleSubmit={this.handleSubmit}
+                        handleReset={this.handleReset}
+                     />
                   </section>
                )}
             />
