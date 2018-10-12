@@ -1,12 +1,14 @@
 import React, { Component } from "react";
+import { Route } from "react-router-dom";
 import MainTitle from "../components/titles/mainTitles";
 import SecondaryTitle from "../components/titles/secondaryTitle";
 import Form from "../components/forms/nameFirstnameForm";
 import NameElement from "../components/lists/nameElement";
+import UserProfile from "../components/profile/profile";
 import * as takersAPI from "../assets//data/takersAPI";
 
 class TestTakers extends Component {
-   constructor(props) {
+   constructor(props, history) {
       super(props);
       this.state = {
          testTakers: [],
@@ -43,11 +45,34 @@ class TestTakers extends Component {
    render() {
       return (
          <main role="main" className="test-takers">
-            <section className="left-bar">
-               <MainTitle titleText="Test Takers" />
-               <p>Search in the list:</p>
-               <Form handleSubmit={this.handleSubmit} />
-            </section>
+            <Route
+               exact
+               path="/"
+               render={props => (
+                  <section className="left-bar">
+                     <MainTitle titleText="Test Takers" />
+                     <p>Search in the list:</p>
+                     <Form handleSubmit={this.handleSubmit} />
+                  </section>
+               )}
+            />
+
+            <Route
+               path="/:userId"
+               render={props => (
+                  <section className="left-bar profile">
+                     <button
+                        onClick={props.history.goBack}
+                        className="back-button"
+                     >
+                        ◀ Back
+                     </button>
+                     <MainTitle titleText="Test Taker" />
+                     <UserProfile getTaker={takersAPI.getTaker} {...props} />
+                  </section>
+               )}
+            />
+
             <section className="takers-list">
                <SecondaryTitle titleText="Takers list" />
                <ul>
@@ -57,11 +82,7 @@ class TestTakers extends Component {
                      </p>
                   ) : (
                      this.state.shownTakers.map(taker => (
-                        <NameElement
-                           name={taker.lastName}
-                           firstname={taker.firstName}
-                           key={taker.userId}
-                        />
+                        <NameElement taker={taker} key={taker.userId} />
                      ))
                   )}
                </ul>
